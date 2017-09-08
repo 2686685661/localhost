@@ -1,0 +1,49 @@
+E: dpkg 被中断，您必须手工运行 sudo dpkg --configure -a 解决此问题
+sudo rm /var/lib/dpkg/updates/*
+sudo apt-get update
+sudo apt-get upgrade
+
+软件安装
+sudo dpkg -i 软件名.deb
+
+找到名字
+dpkg -l | grep qq
+
+软件删除
+sudo apt-get purge(remove) .....
+sudo apt-get autoremove
+sudo apt-get clean
+
+更改用户组和权限
+sudo chown -R jiangang /var/www
+sudo chmod -R 775 /var/www
+
+ubunut时区
+sudo timedatectl set-local-rtc 1
+
+双系统Ubuntu无法访问Windows磁盘分区（挂载磁盘出问题，使用ntfs来修复后重新挂载。）
+1.安装ntfs	sudo apt-get install ntfs-3g
+以sda6为例，修复命令为：	sudo ntfsfix /dev/sda6
+
+文件编辑
+点击 键盘的 “Esc” 如果保存退出文件 就是 :wq 不保存退出 :q 不保存强制退出 :q!
+
+文件命令
+文件删除	1. rm 文件名	 2. rm -r 文件夹名 （mkdir rmdir）
+
+软件自动启动	gnome-session-properties
+
+远程拷贝文件和文件夹
+scp -r /home/administrator/test/ root@192.168.1.100:/root/拷贝到远程
+scp -r root@192.168.62.10:/root/ /home/administrator/Desktop/new/拷贝到本地
+
+
+netstat -tunlp 来检查服务的运行情况
+
+服务器登录MySQL:mysql -u root –p
+
+
+
+
+
+

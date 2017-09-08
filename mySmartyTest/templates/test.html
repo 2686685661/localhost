@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{{config_load file="../configs/foo.conf" section="Customer"}}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+    <title>{{$title}}</title>
+</head>
+<body bgcolor="{{$smarty.config.bodyBgColor}}">
+
+{{$content|index:"red":50}}
+
+<p>{{$smarty.session.username}}</p>
+<p>{{$smarty.const.ROOT}}</p>
+<p>{{$smarty.version}}</p>
+
+<p>{{date}}</p>
+<!--<p>{{two}}</p>-->
+
+<!--{{assign var="bar"}}-->
+
+<!--{{$var}}-->
+
+
+<ul>
+{{for $foo=1 to 3}}
+    <li>111</li>
+{{/for}}
+</ul>
+</body>
+</html>

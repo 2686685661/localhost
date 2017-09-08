@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/MyBlogs/View/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/MyBlogs/View/js/reclocal.js"></script>
+    <script src="/MyBlogs/View/js/getrecarticalUrl.js"></script>
+    <script src="/MyBlogs/View/js/diary.js"></script>
+    <link rel="stylesheet" href="/MyBlogs/View/css/recheader.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/hotartical.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/rectheartical.css">
+</head>
+<body>
+    <div id="pblicReception"></div>
+    <div class="main-content">
+        <div class="main-content-box animated fadeInLeft fl">
+            <div class="content-text-box">
+                <h1 id="articalHeadline" class="title-h1">
+                    如何建立个人博客？
+                </h1>
+                <div class="detail-info-box">
+                    <ul class="clearfix">
+                        <li>编辑时间：<span id="articalTime"></span></li>
+                        <li>阅览量:<span id="articalReadnumber"></span></li>
+                        <li>作者：<span id="articalPerson"></span></li>
+                    </ul>
+                </div>
+                <div id="articalContent" class="content"></div>
+            </div>
+            <div class="content-form-box">
+                <form>
+                    <div class="col-md-10">
+                        <div class="form-group">
+                            <label>姓名</label>
+                            <input name="commentname" id="name" class="form-control" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>邮箱</label>
+                            <input id="mailbox" class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-10 col-md-10 col-sm-10">
+                        <label>在此评论</label>
+                        <textarea class="form-control" name="commenttext" id="text" cols="30" rows="5" placeholder="再次评论"></textarea>
+                    </div>
+                    <div class="col-md-6 determineRegister">
+                        <input class="message-sub" type="button" value="提交" onclick="submitcom()">
+                    </div>
+                </form>
+
+            </div>
+            <div id="contow-box" ></div>
+
+
+            <!--<div class="content-comment-box">-->
+                <!--<div>-->
+                    <!--<p>李闪磊</p>-->
+                    <!--<p>hhhhhhhhhhhhhhhhhhhhhhhh</p>-->
+                    <!--<div class="">-->
+                        <!--<span class="ds-time">2016-12-12</span>-->
+                        <!--<a class="aaa">回复</a>-->
+                    <!--</div>-->
+                    <!--<div class="ds-replybox ds-inline-replybox" style="display: block">-->
+                        <!--<form action="">-->
+                            <!--<div class="ds-textarea-wrapper ds-rounded-top">-->
+                                <!--<div class="form-input">-->
+                                    <!--姓名：<input type="text">-->
+                                <!--</div>-->
+                                <!--<div class="form-input">-->
+                                    <!--邮箱：<input type="text">-->
+                                <!--</div>-->
+                                <!--<textarea name="" id="" cols="30" rows="10"></textarea>-->
+                                <!--<input type="submit">-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        </div>
+        <div class="main-content-side animated fadeInRight fr">
+
+            <?php
+				include 'modifyMy.php';
+				$modifymy = new \MyBlogs\Controller\modifyMy;
+				$modifymy->hotartical('artical','limit 0,5');
+                $modifymy->hotartical('leavingMessage','limit 0,5');
+            ?>
+        </div>
+    </div>
+</body>
+</html>

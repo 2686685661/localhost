@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人博客-唯美图片</title>
+    <link rel="stylesheet" href="/MyBlogs/View/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/MyBlogs/View/js/reclocal.js"></script>
+    <link rel="stylesheet" href="/MyBlogs/View/css/recheader.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/recpicture.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/picturemy.css">
+</head>
+<body>
+    <div id="pblicReception"></div>
+    <div class="main-content">
+        <div class="crumbs-nav-wrap">
+            <div class="crumbs-nav clearfix">
+                <a class="fl">首页</a>
+                <span class="fl">></span>
+                <span class="fl">唯美图片</span>
+            </div>
+        </div>
+        <div class="main-content-box">
+            <?php
+                include 'modifyMy.php';
+                $modifymy = new \MyBlogs\Controller\modifyMy;
+                $a = $modifymy->count(2);
+                include 'Page.php';
+                $page = new \MyBlogs\Controller\Page($a);
+                $modifymy->selectpicture($page->limit,1);
+            ?>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的博客登陆</title>
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/MyBlogs/View/js/login.js"></script>
+    <link rel="stylesheet" href="/MyBlogs/View/css/register.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="container-header">
+            <h2>我的个人博客登陆</h2>
+        </div>
+        <!-- #include virtual="proscenium.html" -->
+        <div class="container-main">
+            <form id="Form">
+                <ul class="common-form">
+                    <li class="username">
+                        <div class="formli-input">
+                            <span class="formli-input-icon">
+                                <i>账号</i>
+                            </span>
+                            <input id="accounttext" name="account" type="text" class="formli-input-text" placeholder = "   账号" maxlength="15" onFocus="keywordfocus(this)">
+                            <span style="opacity: 0;" id="emptyUser" class="formli-input-warning">请输入账号</span>
+                            <span style="opacity: 0;" id="inexistenceUser" class="formli-input-warning">账号错误</span>
+                        </div>
+
+                    </li>
+                    <li class="password">
+                        <div class="formli-input">
+                            <span class="formli-input-icon">
+                                <i>密码</i>
+                            </span>
+                            <input id="passwordtext" name="password" type="password" class="formli-input-text" placeholder = "   密码" maxlength="15" onFocus="keywordfocus(this)">
+                            <span style="opacity: 0;" id="emptyPassword" class="formli-input-warning">请输入密码</span>
+                            <span style="opacity: 0" id="mistakePassword" class="formli-input-warning">密码错误</span>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="formli-input-icon">
+                            <!--<span class="formli-input-icon">-->
+                                <!--<i>验证码</i>-->
+                            <!--</span>-->
+                            <input type="text" style="height: 25px;color: #0A0A0A;"  size="13" name="code" placeholder="验证码" onkeyup="if(this.value!=this.value.toUpperCase()) this.value=this.value.toUpperCase()">
+                            <img src="/MyBlogs/View/html/code.php" onclick="this.src='/MyBlogs/View/html/code.php?'+Math.random()"/>
+                        </div>
+                    </li>
+                    <li class="remeber">
+                        <a href="" class="forgotpassword">忘记密码</a>
+                    </li>
+                    <li class="determineRegister">
+                        <input type="button" value="登陆" onclick="denglu()">
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
+<!--onkeyup="if(this.value!=this.value.toUpperCase()) this.value=this.value.toUpperCase()"-->
+<!--onclick="this.src='code.php?'+Math.random()"-->

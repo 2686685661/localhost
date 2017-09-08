@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闲言碎语</title>
+    <link rel="stylesheet" href="/MyBlogs/View/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/MyBlogs/View/js/reclocal.js"></script>
+    <link rel="stylesheet" href="/MyBlogs/View/css/recheader.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/recdiaryMy.css">
+</head>
+<body>
+    <div id="pblicReception"></div>
+
+    <div class="main-content">
+        <div class="crumbs-nav-wrap">
+            <div class="crumbs-nav clearfix">
+                <a class="fl">首页</a>
+                <span class="fl">></span>
+                <a class="fl">个人日记</a>
+            </div>
+        </div>
+        <div class="main-content-box">
+            <?php
+                include 'modifyMy.php';
+                $modifymy = new \MyBlogs\Controller\modifyMy;
+                $a = $modifymy->count(0);
+                include 'Page.php';
+                $page = new \MyBlogs\Controller\Page($a);
+                $modifymy->selectdiary($page->limit,1);
+            ?>
+            <!--<?php-->
+                <!--foreach($mydiary as $row) {-->
+                    <!--echo "<ul class='arraw-box bounceIn animated'>";-->
+                    <!--echo "<div class='sy'><p>".$row['diarycontent']."</p></div>";-->
+                    <!--echo "<span class='dateview'>".$row['diarytime']."</span>";-->
+                    <!--echo "</ul>";-->
+
+                <!--}-->
+            <!--?>-->
+            <!--<ul class="arraw-box">-->
+                <!--<div class="sy">-->
+                    <!--<p>自己总在不知不觉间辜负一个鲜活的今天。时间总是太过匆忙，不管怎样地匆匆碌碌，总也不能抹杀掉一天完结后的惊恐。而此刻，对于时间，我能做的只有拧紧那一枚枚指针，织补那一根根经纬。</p>-->
+                <!--</div>-->
+                <!--<span class="dateview">2013-06-29</span>-->
+            <!--</ul>-->
+        </div>
+    </div>
+
+
+
+</body>
+</html>

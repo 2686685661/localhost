@@ -1,0 +1,113 @@
+.main-content .main-content-box {
+    width: 690px;
+    transition: all 1s;
+    margin-left: 0;
+    /*clear: both;*/
+}
+.main-content .main-content-side {
+    width: 290px;
+    transition: all 1s;
+}
+.fr {
+    float: right;
+}
+.fadeInRight {
+    animation-name: fadeInRight;
+}
+.fadeInLeft {
+    animation-name: fadeInLeft;
+}
+.animated {
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+@keyframes fadeInLeft {
+    from {margin-left: -200px;}
+    to {margin-left: 0;}
+}
+@keyframes fadeInRight {
+    from {margin-right: -200px;}
+    to {margin-right: 0;}
+}
+.form-control {
+    padding: 0;
+}
+.determineRegister {
+    margin-top: 200px;
+    margin-left: 80px;
+}
+.determineRegister input {
+    cursor: pointer;
+    opacity: 0.75;
+    border-radius: 6px;
+    clear: both;
+    width:100%;
+    height: 46px;
+    line-height: 46px;
+    margin: 0 0 12px;
+    padding: 1px;
+    text-align: center;
+    text-shadow: rgba(255,255,255,.496094) 0 1px 0;
+    background: linear-gradient(#6383c6,#4262af);
+}
+.main-content-publish-box {
+    clear: both;
+    width: 100%;
+    height:100px;
+}
+.main-content-display-box {
+    width: 100%;
+    /*height: 100px;*/
+    position: relative;
+    clear: both;
+}
+.display-box {
+    width: 100%;
+}
+.story {
+    border:2px dashed #cecece;
+    padding:0 15px 3px;
+    position:relative;
+
+}
+.opbtn {
+    position:absolute;
+    top: 0;
+    right: 0;
+}
+.story_t {
+    font-size:1.2em;
+    color:rgba(0,0,0,1);
+    padding-top:5px;
+    padding-bottom:2px;
+}
+.story_time {
+    color:rgba(154,154,154,1);
+    padding:2px 0;
+}
+.story_time_hf {
+    color:rgba(154,154,154,1);
+    margin-left: 20px;
+}
+.story_m {
+    color:rgba(110,110,110,1);
+    line-height:21px;
+    word-break:break-all;
+    word-wrap:break-word;
+    overflow:hidden;
+    font-size:1.2em;
+    padding:2px 0;
+    /*border: 2px solid #0f0f0f;*/
+}
+.story_hf {
+    background:rgb(245,245,225);
+    font-size:1.2em;
+    border:1px solid rgba(204,204,204,0.2);
+    border-radius:2px;
+    color:rgba(110,110,110,1);
+    padding:4px 0;
+    margin-bottom:5px;
+    margin-left: 20px;
+}

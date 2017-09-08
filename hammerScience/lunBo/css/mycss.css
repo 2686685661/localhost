@@ -1,0 +1,65 @@
+body, div, img {
+	margin: -2px;
+	padding: 0;
+}
+em {
+	font-style: normal;
+}
+#container {
+	width: 599px;
+	height: 400px;
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
+}
+#list {
+
+	width: 4200px;
+	height: 400px;
+	overflow: hidden;
+	position: absolute;
+}
+#buttons {
+	position: absolute;
+	right: 35%;
+	bottom: 6%;
+	width: 160px;
+	height: 20px;
+}
+#buttons span {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 7px;
+	margin: 0 3px;
+	background-color: #000;
+	overflow: hidden;
+}
+#buttons .on {
+	background-color: yellow;
+}
+.arrow {
+	position: absolute;
+	top: 40%;
+	height: 60px;
+	width: 60px;
+	to
+}
+#prev {
+	left: 0;
+}
+#next {
+	right: 0;
+}
+.arrow strong {
+	position: absolute;
+	display: line-block;
+	font-size: 60px;
+	width: 60px;
+	height: 60px;
+	top: 0%;
+}
+.arrow:hover strong {
+	display: block;
+}
+

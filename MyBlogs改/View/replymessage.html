@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理-我的留言</title>
+    <link rel="stylesheet" href="/MyBlogs/View/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/MyBlogs/View/utf8-php/ueditor.config.js"></script>
+    <script src="/MyBlogs/View/utf8-php/ueditor.all.min.js"></script>
+    <script src="/MyBlogs/View/js/local.js"></script>
+    <script src="/MyBlogs/View/js/getleavUrl.js"></script>
+    <link rel="stylesheet" href="/MyBlogs/View/css/informationMy.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/messageMy.css">
+    <script>
+        $(function () {
+            var ue = UE.getEditor('leavingmessage');
+        });
+        $(function () {
+            var ue = UE.getEditor('replymessage');
+        });
+    </script>
+</head>
+<body>
+<div class="adcenter"></div>
+<div id="wrapper">
+    <div id="page-nav"></div>
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="color:#f00;">Admin Dashboard</h2>
+                    <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            留言管理
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                    <label>游客留言</label>
+                                    <textarea class="form-control" name="explains" id="leavingmessage" cols="30" rows="10" placeholder="aaaaaaaaaa"></textarea>
+                                </div>
+                                <form id="reply">
+                                    <div class="form-group col-lg-12 col-md-12 col-sm-12" style="margin-top: 200px">
+                                        <label>回复留言</label>
+                                        <textarea class="form-control" name="explain" id="replymessage" cols="30" rows="10" placeholder="aaaaaaaaaa"></textarea>
+                                    </div>
+
+                                    <input class="btn btn-primary" onclick="reply()" value="提交">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

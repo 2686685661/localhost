@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.428;
+    color: #333;
+    background-color: #fff;
+}
+#wrapper {
+    width: 100%;
+    background: #202020;
+}
+.adcenter {
+    width: 960px;
+    height: 90px;
+    margin: 0 auto;
+}
+#page-wrapper {
+    margin: 0 0 0 260px;
+    padding: 15px 30px;
+    min-height: 1200px;
+    background: #F3F3F3;
+}
+#page-inner {
+    width: 100%;
+    margin: 10px 20px 10px 0px;
+    background-color: #fff!important;
+    padding: 10px;
+    min-height: 1200px;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}

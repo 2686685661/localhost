@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的文章</title>
+    <link rel="stylesheet" href="/MyBlogs/View/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--<link rel="stylesheet" href="/MyBlogs/View/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">-->
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/MyBlogs/View/js/diary.js"></script>
+    <link rel="stylesheet" href="/MyBlogs/View/css/diaryMy.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/informationMy.css">
+</head>
+<body>
+    <div class="adcenter"></div>
+    <div id="wrapper">
+        <div id="page-nav"></div>
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 style="color:#f00;">我的文章</h2>
+                        <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                文章管理
+                                <a id="newartical" href="/MyBlogs/index.php/Admin/newartical">[ 写文章 ]</a>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <?php
+                                            include 'modifyMy.php';
+                                            $modifymy = new \MyBlogs\Controller\modifyMy;
+                                            $a = $modifymy->count(1);
+                                            include 'Page.php';
+                                            $page = new \MyBlogs\Controller\Page($a);
+                                            $modifymy->selectartical($page->limit);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/MyBlogs/View/js/local.js"></script>
+</body>
+</html>
+
+
+
+
+<!--<table class="table">-->
+    <!--<thead>-->
+    <!--<tr>-->
+        <!--<th>id</th>-->
+        <!--<th>标题</th>-->
+        <!--<th>时间</th>-->
+        <!--<th>发表人</th>-->
+        <!--<th></th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--<?php-->
+                                                    <!--foreach($myartical as $row) {-->
+                                                        <!--echo '<tr>';-->
+    <!--echo '<td>'.$row['id'].'</td>';-->
+    <!--echo '<td>'.$row['headline'].'</td>';-->
+    <!--echo '<td>'.$row['publishtime'].'</td>';-->
+    <!--echo '<td>'.$row['publishperson'].'</td>';-->
+    <!--echo '<td><button onclick=modifyartical('.$row['id'].')>修改</button><button onclick=deletearticle('.$row['id'].')>删除</button></td>';-->
+    <!--echo '</tr>';-->
+    <!--}-->
+    <!--?>-->
+    <!--</tbody>-->
+<!--</table>-->

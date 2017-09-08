@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>我的个人博客</title>
+	<link rel="stylesheet" href="/MyBlogs/View/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.js"></script>
+	<script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+	<script src="/MyBlogs/View/js/reclocal.js"></script>
+	<script src="/MyBlogs/View/js/diary.js"></script>
+	<link rel="stylesheet" href="/MyBlogs/View/css/proscenium.css">
+	<link rel="stylesheet" href="/MyBlogs/View/css/hotartical.css">
+	<link rel="stylesheet" href="/MyBlogs/View/css/recheader.css">
+</head>
+<body>
+	<div id="pblicReception"></div>
+
+	<div class="main-content clearfix">
+		<div class="crumbs-nav-wrap">
+			<div class="crumbs-nav clearfix">
+				<a class="fl">首页</a>
+				<span class="fl">></span>
+				<a class="fl">关于自己</a>
+			</div>
+		</div>
+		<div class="main-content-box animated fadeInLeft fl">
+			<div class="about-content">
+				<?php
+
+					foreach($my as $row) {
+						echo "<h1>我的简介</h1>";
+						echo "<h3>我的姓名:".$row['myName']."</h3>";
+						echo "<h3>我的QQ:<strong>".$row['qq']."</strong></h3>";
+						echo "<h3>我的职业:".$row['myWork']."</h3>";
+						echo "<h3>我的兴趣:".$row['myHobby']."</h3>";
+						echo "<h1>自我认为</h1>";
+						echo "<h4>".$row['myExplain']."</h4>";
+					}
+				?>
+			</div>
+		</div>
+		<div class="main-content-side animated fadeInRight fr">
+			<?php
+
+				include 'modifyMy.php';
+				$modifymy = new \MyBlogs\Controller\modifyMy;
+				$modifymy->hotartical('artical','limit 0,5');
+				$modifymy->hotartical('leavingMessage','limit 0,5');
+			?>
+			<!--<div class="hot-recommend-wrap">-->
+				<!--<h2 class="title-h2 clearfix">热门文章</h2>-->
+				<!--<div id="hotRecommend" class="hot-recommend">-->
+					<!--<ul>-->
+						<!--<li>-->
+							<!--<a href="">浅谈html和HTML5的区别</a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="">你说是哦我收到</a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="">你说事实似乎四海叔叔</a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="">你说事实似乎四海叔叔</a>-->
+						<!--</li>-->
+						<!--<li>-->
+							<!--<a href="">你说事实似乎四海叔叔</a>-->
+						<!--</li>-->
+					<!--</ul>-->
+				<!--</div>-->
+				<!--<ol class="number">-->
+					<!--<li class="one">1</li>-->
+					<!--<li class="two">2</li>-->
+					<!--<li class="three">3</li>-->
+					<!--<li>4</li>-->
+					<!--<li>5</li>-->
+
+				<!--</ol>-->
+			<!--</div>-->
+		</div>
+	</div>
+
+</body>
+</html> 

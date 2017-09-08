@@ -1,0 +1,5 @@
+{
+    "require": {
+        "dflydev/apache-mime-types": "^1.0"
+    }
+}

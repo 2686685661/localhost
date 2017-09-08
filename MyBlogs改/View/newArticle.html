@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新怎文章</title>
+    <link rel="stylesheet" href="/MyBlogs/View/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/MyBlogs/View/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="/MyBlogs/View/utf8-php/ueditor.config.js"></script>
+    <script src="/MyBlogs/View/utf8-php/ueditor.all.min.js"></script>
+
+    <link rel="stylesheet" href="/MyBlogs/View/css/informationMy.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/newArticle.css">
+</head>
+<body>
+<div class="adcenter"></div>
+    <div id="wrapper">
+        <div id="page-nav"></div>
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>新增文章</h2>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <form id="forms" method="post" action="/MyBlogs/Common/arupload.php" enctype="multipart/form-data">
+                        <!--<div class="col-md-12">-->
+                            <!--<div class="form-group">-->
+                                <!--<label>文章标题</label>-->
+                                <!--<input name="headline" type="text">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        文章类型
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul id="groupbtn" class="dropdown-menu"></ul>
+
+                                </div>
+                                <input id="inpbtn" name="articletype" type="text" readonly="true" class="form-control">
+                            </div>
+                        </div>
+                        <div style="margin-top: 30px;" class="col-md-8">
+                            <div class="form-group">
+                                <label>文章封面： </label>
+                                <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                                <input id="img" name="articalcover"  type="file">
+                            </div>
+                            <div class="form-group">
+                                <label>文章标题:  </label>
+                                <input name="headline" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px;" class="form-group col-lg-10 col-md-10 col-sm-10">
+                            <label>文章内容</label>
+                            <textarea class="form-control" name="articalcontent" id="article" cols="30"                                                                      rows="20" placeholder="aaaaaaaaaa"></textarea>
+                        </div>
+                        <input class="btn btn-primary" value="发表" type="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/MyBlogs/View/js/article.js"></script>
+    <script src="/MyBlogs/View/js/local.js"></script>
+</body>
+</html>

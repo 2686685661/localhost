@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人博客-查询</title>
+    <!--<link rel="stylesheet" href="/MyBlogs/View/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/MyBlogs/View/js/reclocal.js"></script>
+    <script src="/MyBlogs/View/js/diary.js"></script>
+    <script src="/MyBlogs/View/js/getvagueUrl.js"></script>
+    <link rel="stylesheet" href="/MyBlogs/View/css/recheader.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/recHomepage.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/hotartical.css">
+</head>
+<body>
+<div id="pblicReception"></div>
+
+<div class="main-content">
+    <div class="crumbs-nav-wrap">
+        <div class="crumbs-nav clearfix">
+            <a class="fl">查询结果</a>
+        </div>
+    </div>
+    <div class="main-content-box fl">
+        <h2 class="title-h2">
+            文章查询
+            <span>Sekect Artical</span>
+        </h2>
+        <div class="about-content" id="aboutContent" style="background-color: #efefef;"></div>
+    </div>
+    <div class="main-content-side fr">
+        <?php
+		    include 'modifyMy.php';
+			$modifymy = new \MyBlogs\Controller\modifyMy;
+			$modifymy->hotartical('artical','limit 0,5');
+            $modifymy->hotartical('leavingMessage','limit 0,5');
+        ?>
+
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+div{
+    width:250px;
+    height: 200px;
+    position: relative;
+    background-color: #c0c0c0;
+    left: 30%;
+    top:200px;
+}
+
+#goback{
+    float: right;
+    position: relative;
+    left: -10px;
+}

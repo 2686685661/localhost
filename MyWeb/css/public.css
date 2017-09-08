@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style:none;
+}
+p{
+    display: block;
+}
+input{
+    outline: none;
+}
+span{
+    display: block;
+}
+body,h1,h2,h3,h4,h5,h6,span,i{
+    font-weight: normal;
+}
+.clearboth:after{
+    content: " ";
+    clear: both;
+    display:block;
+}
+textarea{
+    resize:none;
+    font-size: 20px;
+}

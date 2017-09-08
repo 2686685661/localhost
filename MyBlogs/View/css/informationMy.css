@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.428;
+    color: #333;
+    background-color: #fff;
+}
+.navbar-header {
+    background: #A70303;
+}
+.navbar-cls-top .navbar-brand {
+    background: #C90000;
+    width: 260px;
+    text-align: center;
+    height: 60px;
+    font-size: 30px;
+    font-weight: 700;
+    float: left;
+}
+.navbar-side {
+    z-index: 1;
+    position: absolute;
+    width: 260px;
+}
+.navbar-default {
+    border: 0px solid black;
+}
+.sidebar-collapse, .sidebar-collapse .nav {
+    background: none;
+}
+.sidebar-collapse > .nav > li {
+    border-bottom: 1px solid rgba(107, 108, 109, 0.19);
+}
+.text-center {
+    text-align: center;
+}
+.user-image {
+    margin: 25px auto;
+    border-radius: 10px;
+    max-height: 170px;
+    max-width: 170px;
+}
+.sidebar-collapse > .nav > li > a {
+    padding: 15px 10px;
+}
+.sidebar-collapse .nav > li > a {
+    color: #fff;
+    background: #202020;
+    text-shadow: none;
+}
+.active-menu {
+    background-color: #C90000!important;
+}
+.nav > li > a > i {
+    margin-right: 10px;
+}
+.fa-3x {
+    font-size: 3em;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+.sidebar-collapse .nav > li > a:hover, .sidebar-collapse .nav > li > a:focus {
+    background: #0A0A0A;
+    outline: 0;
+}
+
+
+/*#page-wrapper {*/
+    /*margin: 0 0 0 260px;*/
+    /*padding: 15px 30px;*/
+    /*min-height: 1200px;*/
+    /*background: #F3F3F3;*/
+/*}*/
+/*#page-inner {*/
+    /*width: 100%;*/
+    /*margin: 10px 20px 10px 0px;*/
+    /*background-color: #fff!important;*/
+    /*padding: 10px;*/
+    /*min-height: 1200px;*/
+/*}*/
+/*.row {*/
+    /*margin-right: -15px;*/
+    /*margin-left: -15px;*/
+/*}*/
+/*.btn-primary {*/
+    /*float: right;*/
+    /*margin-right: 30px;*/
+/*}*/

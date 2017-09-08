@@ -1,0 +1,39 @@
+.panel-content{
+    position: relative;
+    top: 10px;
+}
+
+#goback{
+    float: right;
+    position: relative;
+    left: -10px;
+}
+
+#aaaaaa {
+    max-width: 100%;
+}
+
+#article{
+    position: relative;
+    resize:none;
+    /*width: 100%;*/
+    margin: 0 auto;
+}
+
+#displayarea{
+    height: 800px;
+}
+
+.paging-frame{
+    width: 100%;
+}
+
+
+/*#articleform{
+    display: none;
+    width: 100%;
+}*/
+
+/*#imgg{
+    src: "C:\fakepath\xny1.jpg";
+}*/

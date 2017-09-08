@@ -1,0 +1,56 @@
+<?php
+ini_set('display_errors','on');            //错误信息
+
+session_start();
+spl_autoload_register('autoLoad');
+//自动加载
+function autoLoad($className){
+    $className = str_replace('\\','/',$className);
+    $fileName = $_SERVER['DOCUMENT_ROOT'].'/'.$className.'.php';
+    include $fileName;
+}
+$requestScript = $_SERVER['SCRIPT_NAME'];
+if($requestScript != '/MyWeb/index.php'){
+    exit();
+}
+// 获取请求url
+$requsetURL = $_SERVER['PATH_INFO'];
+$requsetURL = trim($requsetURL,'/');
+$requsetArr = explode('/',$requsetURL);
+
+if(  count($requsetArr) % 2 != 0){
+    echo  '404 not found';
+    exit();
+}
+//获取控制器 和 方法
+$class_ = $requsetArr[0];
+$method = $requsetArr[1];
+
+//路由解析
+$params = [];
+if(count($requsetArr) > 2){
+    $index = 2;
+    while(true){
+        $key = $requsetArr[$index++];
+        $value = $requsetArr[$index++];
+
+        $params[$key] = $value;
+        if($index >= count($requsetArr)){
+            break;
+        }
+    }
+}
+$class_ =  'MyWeb\\controller\\'.$class_;
+$obj = new $class_;
+if(strpos($_SERVER['REQUEST_METHOD'],'POST') !==false){
+    if(!empty($_POST)) {
+
+        $params = $_POST;
+    }
+}elseif(strpos($_SERVER['REQUEST_METHOD'],'GET') !==false){
+    if(!empty($_REQUEST)) {
+        $params = array_merge($params,$_REQUEST);
+    }
+}
+
+echo $obj->$method($params);

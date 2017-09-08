@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的博客--后台管理</title>
+    <link rel="stylesheet" href="/MyBlogs/View/css/backmanage.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/informationMy.css">
+    <link rel="stylesheet" href="/MyBlogs/View/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--<script src="/MyBlogs/View/js/click.js"></script>-->
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/MyBlogs/View/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="adcenter"></div>
+    <div id="wrapper">
+        <div id="page-nav"></div>
+        <div id="page-wrapper">                     <!--include更换文件-->
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 style="color:#f00;">Admin Dashboard</h2>
+                        <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                    </div>
+                </div>
+                <hr>
+                <div class="panel-group" id="accordion">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 id="dateone" class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#collapseOne">
+                                            信息查看
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <div id="bodyone" class="row">
+                                            <?php
+                                                foreach($my as $row){
+                                                    echo '<h4>我的姓名：'.$row['myName'].'</h4>';
+                                                    echo '<h4>我的qq:'.$row['qq'].'</h4>';
+                                                    echo '<h4>我的工作：'.$row['myWork'].'</h4>';
+                                                    echo '<h4>我的兴趣：'.$row['myHobby'].'</h4>';
+                                                    echo '<h4>我的简介：'.$row['myExplain'].'</h4>';
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#collapseTwo">
+                                            信息修改
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <form action="/MyBlogs/index.php/modifyMy/modify" method="post">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>My Name</label>
+                                                        <input name="name" class="form-control" type="text">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label> My QQNumber</label>
+                                                        <input name="qqnumber" class="form-control" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>My Work</label>
+                                                        <input name="work" class="form-control" type="text">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>My Hobby</label>
+                                                        <input name="hobby" class="form-control" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                                    <label>Please Enter Notification Text</label>
+                                                    <textarea class="form-control" name="explain" id="" cols="30"                                                                      rows="16" placeholder="aaaaaaaaaa"></textarea>
+                                                </div>
+                                                <input class="btn btn-primary" type="submit">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/MyBlogs/View/js/local.js"></script>
+</body>
+</html>

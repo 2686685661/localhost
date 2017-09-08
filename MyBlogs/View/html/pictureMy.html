@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的博客后台管理-图片上传</title>
+    <link rel="stylesheet" href="/MyBlogs/View/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.js"></script>
+    <script src="/MyBlogs/View/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="/MyBlogs/View/js/local.js"></script>
+    <script src="/MyBlogs/View/js/diary.js"></script>
+    <link rel="stylesheet" href="/MyBlogs/View/css/diaryMy.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/informationMy.css">
+    <link rel="stylesheet" href="/MyBlogs/View/css/picturemy.css">
+</head>
+<body>
+    <div class="adcenter"></div>
+    <div id="wrapper">
+        <div id="page-nav"></div>
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 style="color:#f00;">Admin Dashboard</h2>
+                        <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                图片管理
+                            </div>
+                            <div style="width: 600px;height: 40px;">
+                                <form  action="/MyBlogs/Controller/upload.php" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                                    <input type="file" multiple="multiple" name="myfile">
+                                    <input type="submit" value="上传文件">
+                                </form>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <?php
+                                        include 'modifyMy.php';
+                                        $modifymy = new \MyBlogs\Controller\modifyMy;
+                                        $a = $modifymy->count(2);
+
+                                        include 'Page.php';
+                                        $page = new \MyBlogs\Controller\Page($a);
+                                        $modifymy->selectpicture($page->limit);
+
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+<!--&lt;!&ndash;<div class="body-img">&ndash;&gt;-->
+<!--&lt;!&ndash;<img class="img" src="/MyBlogs/View/images/20170511212734_411.jpg" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;<button type="button" class="button black">删除</button>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<?php-->
+                                        <!--foreach($mypicture as $row) {-->
+                                            <!--echo "<div class='body-img'>";-->
+<!--echo "<img class='img' src='/MyBlogs/View/images/".$row['picturename']."'/>";-->
+<!--echo "<button type='button' class='button black' onclick=deletepicture(".$row['id'].",'".$row['picturename']."')>删除</button>";-->
+<!--echo "</div>";-->
+<!--}-->
+<!--?>-->
